@@ -1,72 +1,163 @@
-# Graph Algorithms Library (C++)
+# Graph Algorithms in C++
 
-A structured C++ library implementing **classical graph algorithms** for both **directed** and **undirected graphs**.  
-This project is designed as a learning and portfolio project for graph algorithms and data structures.
+This repository contains implementations of fundamental **graph algorithms** written in C++. The goal of the project is to explore graph data structures and practice implementing classic algorithms used in computer science and real-world systems such as navigation, networking, and search engines.
 
----
-
-## Features
-
-### Graph Traversal
-- Breadth-First Search (BFS)
-- Depth-First Search (DFS) — iterative and recursive
-
-### Connectivity & Properties
-- Connected Components
-- Cycle Detection (undirected)
-- Bipartite Graph Check
-- Bridges & Articulation Points (Tarjan’s Algorithm)
-
-### Shortest Path Algorithms
-- Dijkstra’s Algorithm (non-negative weights)
-- Bellman-Ford Algorithm (supports negative weights)
-- Floyd-Warshall Algorithm (all-pairs shortest path)
-
-### Minimum Spanning Tree
-- Kruskal’s Algorithm (DSU-based)
-
-### Strongly Connected Components
-- Kosaraju’s Algorithm
-- Tarjan’s Algorithm (Bridges & Articulation Points)
-
-### Graph Structure
-- Topological Sort (Kahn’s Algorithm)
+The project focuses on **algorithmic problem solving and efficient graph traversal techniques**.
 
 ---
 
-## Project Structure
+## Overview
 
-graphh/
-├── include/
-│ └── Graph.h # Graph class definition
-├── src/
-│ ├── Graph.cpp # Constructor, addEdge, printGraph
-│ ├── Traversal.cpp # BFS and DFS implementations
-│ ├── Connectivity.cpp # Connected components, cycle detection, bipartite, bridges/articulation
-│ ├── ShortestPath.cpp # Dijkstra, Bellman-Ford, Floyd-Warshall
-│ ├── MST.cpp # Kruskal MST
-│ └── SCC.cpp # Kosaraju SCC and Tarjan Bridges/Articulation
-└── examples/
-└── main.cpp # Example usage
+Graphs are one of the most important data structures in computer science and are widely used in:
 
+* Navigation systems
+* Social networks
+* Computer networks
+* Route optimization
+* Dependency resolution
 
-## Features & Complexity
-- Algorithm	Time Complexity
-- BFS / DFS	O(V + E)
-- Connected Components	O(V + E)
-- Cycle Detection (undirected)	O(V + E)
-- Bipartite Check	O(V + E)
-- Bridges & Articulation Points	O(V + E)
-- Dijkstra	O((V + E) log V)
-- Bellman-Ford	O(V * E)
-- Floyd-Warshall	O(V³)
-- Kruskal MST	O(E log E)
-- Kosaraju SCC	O(V + E)
-- Topological Sort (Kahn)	O(V + E)
+This project implements core graph algorithms that form the foundation for many real-world systems.
 
-## Notes
-Designed as a learning and portfolio project.
-Fully modular with separate files per algorithm category.
-Uses adjacency list representation for efficiency.
-Works on both Windows and Linux with GCC / MinGW.
-No external dependencies.
+---
+
+## Implemented Algorithms
+
+### Breadth-First Search (BFS)
+
+Breadth-First Search explores a graph level by level and is commonly used for:
+
+* shortest path in unweighted graphs
+* connectivity analysis
+* graph traversal
+
+Time Complexity:
+
+```
+O(V + E)
+```
+
+Where:
+
+* V = number of vertices
+* E = number of edges
+
+---
+
+### Depth-First Search (DFS)
+
+Depth-First Search explores a graph by going as deep as possible before backtracking.
+
+Applications include:
+
+* cycle detection
+* topological sorting
+* connected components
+
+Time Complexity:
+
+```
+O(V + E)
+```
+
+---
+
+## Graph Representation
+
+The graph is represented using an **adjacency list**, which is efficient for sparse graphs.
+
+Example structure:
+
+```
+vector<vector<int>> adjacencyList;
+```
+
+Advantages:
+
+* memory efficient
+* fast traversal
+* scalable for large graphs
+
+---
+
+## Example Graph
+
+Example graph structure:
+
+```
+1 --- 2
+|     |
+3 --- 4
+```
+
+Traversal example using BFS starting from node 1:
+
+```
+1 → 2 → 3 → 4
+```
+
+Traversal using DFS:
+
+```
+1 → 2 → 4 → 3
+```
+
+---
+
+## Technologies Used
+
+* **C++**
+* Standard Template Library (STL)
+
+Key data structures used:
+
+* `vector`
+* `queue`
+* `stack`
+* `recursion`
+
+---
+
+## How to Run
+
+Clone the repository:
+
+```
+git clone https://github.com/gope7oo/graphh.git
+```
+
+Compile the program:
+
+```
+g++ main.cpp -o graph
+```
+
+Run the program:
+
+```
+./graph
+```
+
+---
+
+## Learning Goals
+
+This project was created to practice:
+
+* graph data structures
+* traversal algorithms
+* algorithm complexity analysis
+* implementation of classical computer science algorithms in C++
+
+---
+
+## Possible Extensions
+
+Future improvements could include:
+
+* Dijkstra's shortest path algorithm
+* A* search algorithm
+* Minimum spanning tree algorithms (Prim / Kruskal)
+* Graph visualization
+* Weighted graphs
+
+---
