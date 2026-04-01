@@ -154,9 +154,8 @@ This project was created to practice:
 
 Future improvements could include:
 
-* Dijkstra's shortest path algorithm
 * A* search algorithm
-* Minimum spanning tree algorithms (Prim / Kruskal)
+* Minimum spanning tree algorithms 
 * Graph visualization
 * Weighted graphs
 
